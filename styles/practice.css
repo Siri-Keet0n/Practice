@@ -1,3 +1,18 @@
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+}
 
 :root {
   --primary-color: #04DDB2;
@@ -13,7 +28,7 @@ html{
 * { margin: 0; padding: 0; box-sizing: border-box; }
 ul { list-style: none; }
 body {
-  font-size:1.6rem;
+
   font-family: 'Gothic A1', sans-serif;
   color:var(--text-color);
   width: 100%;
@@ -21,23 +36,6 @@ body {
   margin:0px ;
 }
 
-.h1{
-  justify-items: center;
-  margin: 4rem 0rem;
-  font-size: 6.4rem;
-  font-weight: bold;
-}
-.h2{
-  justify-items: center;
-  margin: 4rem 0rem;
-  font-size: 5rem;
-  font-weight: bold;
-}
-.h4{
-  margin: 2rem 2rem ;
-  font-size: 2rem;
-  font-weight: lighter;
-}
 
 .header{
   padding: 2rem 4.5rem;
@@ -84,7 +82,7 @@ body {
   font-weight: bold;
   color: white;
   border: none;
-  width: 11rem;
+  width: 12rem;
   height: 3.8rem;
   border-radius: 0.5rem;
   background-color:var(--primary-color) ;
@@ -102,24 +100,40 @@ body {
 }
 
 .main{
-  display:flex;
-  justify-content: center;
+  width: auto;
   align-items: center;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  justify-content: center;
+  & h1{
+    max-width: 50rem;
+    justify-items: center;
+    margin: 4rem 0rem;
+    font-size: 8.5rem;
+    font-weight: bold;
+  }
+  & h2{
+    max-width: 50rem;
+    justify-items: center;
+    margin: 4rem 0rem;
+    font-size: 4rem;
+    font-weight: bold;
+  }
+  & h4{
+    max-width: 60rem;
+  margin: 2rem 2rem ;
+  font-size: 2.3rem;
+  font-weight: lighter;
+  }
+  
 }
 .part-black{color: #636363;}  
 .part-green{color: #04DDB2;}
-.description{
-  max-width: 50%;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-wrap: wrap;
-}
 .carousel{
   padding:3rem;
-  margin: 5rem 0rem;
+  margin: 5rem 0;
   background-color: #f1f1f1;
   border-spacing: 1px ;
   border-color:var(--primary-color) ;
@@ -137,14 +151,14 @@ body {
   justify-content: center;
   align-items: center;
   border-top: #636363 1px;  
-  margin: 10rem 0rem 0rem 0rem;
-  padding: 2rem 0rem;
+  margin: 10rem;
+  padding: 2rem 0;
   color:var(--text-color);
   & nav{  
     border-top:1px solid var(--text-color); 
     display: grid;
     width:60%;
-    grid-template-columns:repeat(5, 1fr);
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     justify-content:center;
     align-items:start;
@@ -154,7 +168,7 @@ body {
       justify-content: center;
       margin: 2rem 0rem; 
       & ul{
-      padding: 0rem;
+      padding: 0;
       align-content:end;
         & li{
         list-style: none;
@@ -173,11 +187,11 @@ body {
           }   
         }
         & span{
-          font-size: 1.8rem;
+          font-size: 1.6rem;
           font-weight: bolder;
         }
         & a{
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: normal;
         color:var(--text-color);
         text-decoration: none;
