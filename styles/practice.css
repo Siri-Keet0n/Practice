@@ -32,8 +32,8 @@ html {
 body {
   font-family: 'Gothic A1', sans-serif;
   color: var(--text-color);
-  width: 100vw;
-  overflow-x: hidden;
+  width: 100%;
+  /* overflow-x: hidden; */
 }
 
 /* Header */
@@ -165,12 +165,12 @@ body {
   justify-content: center;
   align-items: center;
   /* border-top: 1px solid #636363; */
-  margin: 10rem;
+  margin: 10rem 0;
   padding: 2rem 0;
   color: var(--text-color);
 
   nav {
-    border-top: 1px solid var(--text-color);
+    /* border-top: 1px solid var(--text-color); */
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
