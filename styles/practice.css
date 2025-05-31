@@ -37,7 +37,7 @@ body {
 }
 
 /* Header */
-.header {
+header {
   padding: 2rem 4.5rem;
   display: flex;
   justify-content: space-between;
@@ -61,6 +61,7 @@ body {
 
   nav {
     display: flex;
+    flex-wrap: wrap;
     flex-grow: 1;
     gap: 5rem;
     padding: 1.4rem;
@@ -122,23 +123,23 @@ body {
   
   h1 {
     max-width: 50rem;
-    margin: 4rem 0;
+    margin: 3.5rem 0;
     font-size: 8.5rem;
     font-weight: bold;
   }
   
   h2 {
-    max-width: 50rem;
+    max-width: 45rem;
     margin: 4rem 0;
-    font-size: 4rem;
+    font-size: 7rem;
     font-weight: bold;
   }
   
   h4 {
     max-width: 60rem;
     margin: 2rem;
-    font-size: 2.3rem;
-    font-weight: lighter;
+    font-size: 4rem;
+    font-weight: bold;
   }
 }
 
@@ -161,7 +162,7 @@ body {
 }
 
 /* Footer */
-.footer {
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,9 +179,9 @@ body {
     min-width: 60%;
       ul {
         /* border: 1px solid gray; */
-        display: grip;
-        justify-content:stretch;
-        align-items: center;
+        display: grid;
+        justify-content:start;
+        align-items:start;
         margin: 2rem 0;
         padding: 0;
         
@@ -251,12 +252,12 @@ body {
   
   .main {
     h1 {
-      font-size: 4rem;
+      font-size: 6rem;
       margin: 2rem 0;
     }
     
     h2 {
-      font-size: 2.5rem;
+      font-size: 4.4rem;
       margin: 2rem 0;
     }
     
@@ -273,11 +274,12 @@ body {
     }
   }
   
-  .footer {
+  footer {
     width: 100%;
+    /* justify-items: center; */
     border-top: 1px solid #636363;
-    margin: 5rem 0 0;
-    padding: 2rem 1rem;
+    margin: 3rem 0 0;
+    padding: 2rem 3rem;
       nav {          
       display: grid;
       justify-items:start;
@@ -287,29 +289,36 @@ body {
         "about general"
         "resources social"
         "copyright copyright";
-      gap: 1.5rem;
-      
+
       .about { grid-area: about; }
       .general { grid-area: general; }
       .resources { grid-area: resources; }
       .social { grid-area: social; }
       .copyright { 
         grid-area: copyright;
-        
-         li {
-          display: inline-block;
-          margin: 0 1rem;
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+
+         ul li {
+          /* display: inline-flex; */
+          a {font-size:1rem} 
+          /* margin: 0; */
         }
       }
-      
-      ul li {
-        padding: 1rem;
+      ul{
+        display:grid;
+        justify-items: start;
+        align-items: start;
+        li {
+        padding: 0.3rem;
         span {
           font-size: 2rem;
         }
         
         a {
-          font-weight:bold;
+          font-weight:normal;
           font-size: 1.6rem;
         }
         
@@ -323,6 +332,7 @@ body {
           }
         }
       }
+      } 
     }
   }
 }
