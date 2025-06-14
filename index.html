@@ -17,7 +17,17 @@
         <span>lobe</span>
         <img src="img/Practice/Lobe-logo.png" alt="Логотип Lobe">
       </div>
-      <nav aria-label="Основное меню">
+
+      <input type="checkbox" id="menu-toggle" class="visually-hidden">
+      <label for="menu-toggle" class="hamburger">
+        <svg width="30" height="20" viewBox="0 0 30 20" fill="none">
+          <rect width="30" height="3" fill="black" rx="1.5"></rect>
+          <rect y="8.5" width="30" height="3" fill="black" rx="1.5"></rect>
+          <rect y="17" width="30" height="3" fill="black" rx="1.5"></rect>
+        </svg>
+      </label>
+
+      <nav class="menu" aria-label="Основное меню">
         <a href="#">Обзор</a>   
         <a href="#">Примеры</a>      
         <a href="#">Тур</a>      
@@ -25,9 +35,12 @@
         <a href="#">Помощь</a>      
       </nav>
       
-        <button class="btn">Скачать</button>
+      <button class="btn">Скачать</button>
+      
+    
       
     </header>
+
     <section class="main">
       <h1>
         <span class="part-black">Lobe</span>

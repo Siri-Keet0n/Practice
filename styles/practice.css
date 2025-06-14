@@ -35,14 +35,26 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 
 /* Header */
+
 header {
-  padding: 1rem 6rem 4rem;
   display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 6rem 4rem;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  
 
   .logo {
     display: flex;
@@ -59,11 +71,8 @@ header {
     }
   }
 
-  nav {
+  .menu {
     display: flex;
-    @media (max-width: 768px) {
-      display: none;
-    }
     flex-wrap: wrap;
     flex-grow: 1;
     gap: 5rem;
@@ -82,9 +91,52 @@ header {
     }
   }
 }
-/* ... (весь ваш текущий CSS, включая .footer) ... */
+.hamburger{
+  display:none;
+  justify-self:end;
+}
+@media (max-width: 768px) {
+  header .btn{
+    display: none;
+  }
+  .hamburger{
+    display:block; 
+  }
+  
+  header { 
+    position: relative;
+    padding: 2rem;
+    flex-direction: flex;
+     gap: 2rem;
+  }
+
+  header .menu {
+    display:none;
+    flex-direction: column;
+    position:absolute;
+    top:100%;
+    width: 100%;
+    border-bottom: solid  var(--text-color) 1px;
+    left:0;
+    padding: 1rem;
+    background-color: white;  
+    gap: 2rem;
+    padding: 1rem;
+     a{
+      display: block;
+      padding: 1rem;
+      text-align:start;
+     }
+    }
+    
+  }
+  #menu-toggle:checked ~ .menu{
+    display:flex;
+}
+
 
 /* Button styles */
+
 .btn {
   font-size: 1.6rem;
   font-weight: bold;
@@ -109,6 +161,7 @@ header {
 }
 
 /* Адаптация кнопки для мобильных */
+
 @media (max-width: 768px) {
   .btn {
     width: 12rem;
@@ -116,7 +169,9 @@ header {
     margin: 2rem auto;
   }
 }
+
 /* Main content */
+
 .main {
   width: auto;
   text-align: center;
@@ -243,14 +298,29 @@ footer {
 /* Mobile styles */
 @media (max-width: 768px) {
   .header {
+    position: relative;
     padding: 2rem;
     flex-direction: column;
     gap: 2rem;
-    
-    nav {
-      gap: 2rem;
-      padding: 1rem;
+  }  
+  .menu {
+    display:none;
+    position:absolute;
+    top:100%;
+    width: 100%;
+    border-bottom: solid  color(--text-color) 1px;
+    left:0;
+    padding: 1rem;
+    background-color: white;  
+    gap: 2rem;
+    padding: 1rem;
     }
+    #menu-toggle:checked ~ .menu{
+        display:block;
+}
+  .hamburger{
+    justify-self:end;
+}
   }
   
   .main {
@@ -268,6 +338,7 @@ footer {
       font-size: 2rem;
     }
     .carousel {
+      width: 40rem;
       padding: 1rem;
       img {
         box-shadow: var(--shadow);
@@ -338,4 +409,3 @@ footer {
       } 
     }
   }
-}
